@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./computed-test.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="vue-app">
+        <button @click="a++">Add To A</button>
+        <button @click="b++">Add To B</button>
+        <p v-bind:class="{hello:false, fucku:true}">a - {{a}}</p>
+        <p>b - {{b}}</p>
+        <p>Age + A = {{ addToA }}</p>
+        <p>Age + B = {{ addToB }}</p>
+
+        <h1>Dynamic Css</h1>
+        <button @click="available = !available">Available</button>
+        <button @click="nearby = !nearby">Nearby</button>
+        <span :class="compoClass">Hello </span>
+
+        <h1>Condition</h1>
+        <button @click="error = !error">Toggle error</button>
+        <button @click="success = !success">Toggle success</button>
+        <p v-if="error">There was some error</p>
+        <p v-else-if="success">Whoo...,success :)</p>
+        <p v-show="error">Error display block</p>
+        <p v-show="success">Success display block</p>
+
+        <h1>Looping in array</h1>
+        <ul v-for="(fruit,index) in fruits">
+            <li>{{index}}.{{fruit}}</li>
+        </ul>
+        <h1>Looping in object</h1>
+        <ul v-for="(hero,index) in heros">
+            <li>{{index}}
+                <template v-for="(key,value) in hero">
+                    <h3>{{key}}: {{value}}</h3>
+                </template>
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="./computed-test.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+
+<body>
+
+
+    <main>
+        <!-- bag image -->
+        <section id="vue-app-one">
+            <h1>{{title}}</h1>
+            <greeting/>
+        </section>
+        <section id="vue-app-two">
+            <h1>{{title}}</h1>
+            <greeting/>
+        </section>
+
+        <section id="ref-test">
+            <h1 ref="title">{{title}}</h1>
+            <h6>Output : {{output}}</h6>
+            <input type="text" ref="input" />
+            <button @click="showOutput">Submit</button>
+        </section>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

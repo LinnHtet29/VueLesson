@@ -1,0 +1,14 @@
+span {
+    background: red;
+    padding: 1.5rem;
+    margin: 0.5rem;
+    display: inline-block;
+}
+
+.nearby {
+    transform: translate(20%,20%);
+}
+
+.available {
+    background: green;
+}

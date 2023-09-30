@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punch bag</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+    
+
+    <main id="vue-app">
+        <!-- bag image -->
+        <section id="bag" :class="{burst: ended}"></section>
+
+        <!-- bag health -->
+        <section id="bag-health">
+            <article :style="{width: + health + '%'}"></article>
+        </section>
+
+        <!-- game control-->
+        <section id="control">
+            <button @click="punch">Punch</button>
+            <button @click="reset">Reset</button>
+        </section>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>

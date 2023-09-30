@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="vue-app">
+        <div v-for="book in books" style="margin-bottom: 0.5rem;">
+            <p>Book Name : {{ book.name }}</p>
+            <p>Author : {{ book.author }}</p>
+        </div>
+        <button @contextmenu="changeRed" @click="changeBlue">Change Blue</button>
+        <button @click="showImg = !showImg">Toggle image</button>
+        <img src="https://v2.vuejs.org/images/logo.svg" alt="Vue Logo" v-show="showImg" width="200px" height="auto"/>
+        <input type="text" @keyup.enter="validateName">
+        <input type="text" @keyup.enter="validateAge">
+        <button @click="showImage">Toggle image</button>
+        <div class="box" :style="{background: color}">
+        </div>
+    </div>
+    <script src="./event-modifiers-test.js"></script>
+</body>
+
+</html>
