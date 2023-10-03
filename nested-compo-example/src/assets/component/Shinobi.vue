@@ -6,32 +6,54 @@
         <h2 v-show="shinobi.show">{{shinobi.speciality}}</h2>
       </li>
     </ul>
+    <button @click="deleteShinobi" class="delete">Delete</button>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    shinobis: {
+      type: Array,
+      required: true,
+    }
+  },
   data() {
     return {
-      shinobis: [
-        {name:'Shinobu', speciality: 'Vue Component', show: false},
-        {name:'Tenjiro', speciality: 'HTML Wizardy', show: false},
-        {name:'Zenitsu', speciality: 'Click Events', show: false},
-        {name:'Inosuke', speciality: 'Conditionals', show: false},
-        {name:'Naruto', speciality: 'Web pack', show: false},
-        {name:'Sasuke', speciality: 'Data Diggin', show: false},
-      ],
     }
-  }
+  },
+  methods: {
+    deleteShinobi: function () {
+      this.shinobis.pop();
+    }
+  },
+  // beforeCreate() {
+  //   alert("Before created..");
+  // },
+  // created() {
+  //   alert("Created...");
+  // },
+  // beforeMount() {
+  //   alert("Before mount...");
+  // },
+  // mounted() {
+  //   alert("Mounted...");
+  // },
+  // beforeUpdate() {
+  //   alert("Before update....");
+  // },
+  // updated() {
+  //   alert("Updated...");
+  // }
 }
 </script>
 
 <style scoped>
-.shinobi {
+.shinobis {
   width: 100%;
   max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: 20px;
+  padding: 40px auto;
 }
 
 ul {
@@ -47,5 +69,10 @@ li {
   padding: 30px;
   border: 1px solid #333;
   margin: 10px;
+}
+
+.delete {
+  margin: 20px;
+  padding: 10px 20px;
 }
 </style>

@@ -1,15 +1,26 @@
 <template>
   <footer>
-    <h5>{{footerText}}</h5>
+    <h5>Copy right 2023 @ {{title}}</h5>
   </footer>
 </template>
 
 <script>
+import { bus } from '../../main';
+
 export default {
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       footerText: "Copy right 2023 @Linn Htet Aung"
     }
+  },
+  created() {
+    bus.$on('titleChange', (data) => this.title = data);
   }
 }
 </script>

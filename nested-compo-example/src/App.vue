@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <app-header/>
-    <shinobi/>
-    <app-footer/>
+    <app-header :title="title" @chgTitle="chgTitleFromParent($event)"/>
+    <shinobi :shinobis="shinobis"/>
+    <app-footer :title="title"/>
   </div>
 </template>
 
@@ -20,6 +20,20 @@ export default {
   },
   data () {
     return {
+      shinobis: [
+        { name: 'Shinobu', speciality: 'Vue Component', show: false },
+        { name: 'Tenjiro', speciality: 'HTML Wizardy', show: false },
+        { name: 'Zenitsu', speciality: 'Click Events', show: false },
+        { name: 'Inosuke', speciality: 'Conditionals', show: false },
+        { name: 'Naruto', speciality: 'Web pack', show: false },
+        { name: 'Sasuke', speciality: 'Data Diggin', show: false },
+      ],
+      title: "Vue Shinobis"
+    }
+  },
+  methods: {
+    chgTitleFromParent:function (changedValue) {
+      this.title = changedValue;
     }
   }
 }
